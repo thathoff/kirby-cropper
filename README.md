@@ -50,4 +50,8 @@ fields:
     cropper:
         label: Cropping Area
         type: cropper
+        ratios:
+            - 16/9
+            - 4/3
+            - 2/3
 ```
