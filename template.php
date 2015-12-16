@@ -26,12 +26,12 @@
         foreach($field->ratios() as $ratio):
             $ratioExploded = explode('/', $ratio);
             ?>
-            <button class="cropperChangeAspectRatio" data-aspectratio="<?php echo ((int)$ratioExploded[0] / (int)$ratioExploded[1]) ?>"><?php echo html($ratio) ?></button>
+            <button class="btn btn-rounded cropperChangeAspectRatio" data-aspectratio="<?php echo ((int)$ratioExploded[0] / (int)$ratioExploded[1]) ?>"><?php echo html($ratio) ?></button>
         <?php endforeach ?>
     <?php endif ?>
-    <button class="cropperChangeAspectRatio" data-aspectratio="NaN">Free</button>
+    <button class="btn btn-rounded cropperChangeAspectRatio" data-aspectratio="NaN">Free</button>
 
-    <button id="cropperSaveButton">Crop it now!</button>
+    <button class="btn btn-rounded btn-positive" id="cropperSaveButton">Crop it now!</button>
 </div>
 
 <script>
