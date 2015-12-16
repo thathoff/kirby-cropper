@@ -21,12 +21,14 @@
         <img id="image" class="img-responsive" src="" alt="Picture">
     </div>
 
-    <?php
-    foreach($field->ratios() as $ratio):
-        $ratioExploded = explode('/', $ratio);
-        ?>
-        <button class="cropperChangeAspectRatio" data-aspectratio="<?php echo ((int)$ratioExploded[0] / (int)$ratioExploded[1]) ?>"><?php echo html($ratio) ?></button>
-    <?php endforeach ?>
+    <?php if(count($field->ratios())): ?>
+        <?php
+        foreach($field->ratios() as $ratio):
+            $ratioExploded = explode('/', $ratio);
+            ?>
+            <button class="cropperChangeAspectRatio" data-aspectratio="<?php echo ((int)$ratioExploded[0] / (int)$ratioExploded[1]) ?>"><?php echo html($ratio) ?></button>
+        <?php endforeach ?>
+    <?php endif ?>
     <button class="cropperChangeAspectRatio" data-aspectratio="NaN">Free</button>
 
     <button id="cropperSaveButton">Crop it now!</button>
