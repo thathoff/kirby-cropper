@@ -8,10 +8,10 @@ module.exports = function ( grunt ) {
                 changelog: false, //default: false
                 file: 'package.json', //default: package.json
                 add: true, //default: true
-                commit: true, //default: true
+                commit: false, //default: true
                 tag: true, //default: true
-                push: true, //default: true
-                pushTags: true, //default: true
+                push: false, //default: true
+                pushTags: false, //default: true
                 npm: false, //default: true
                 tagName: 'v<%= version %>', //default: '<%= version %>'
                 commitMessage: 'release <%= version %>', //default: 'release <%= version %>'
