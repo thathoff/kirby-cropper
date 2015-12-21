@@ -43,15 +43,17 @@ $ git commit -a -m "Update cropper submodule"
 
 ### Within your blueprints
 
-As soon as you dropped the field extension into your fields folder you can use it in your blueprints: simply add `cropper` fields to your blueprints and set some options (where applicable).
+As soon as you dropped the field extension into your fields folder you can use it in your blueprints: simply add `cropper` fields to your blueprints and set some options.
 
 ```yaml
 fields:
-    cropper:
-        label: Cropping Area
-        type: cropper
-        ratios:
-            - 16/9
-            - 4/3
-            - 2/3
+  cropper:
+    label: Cropping Area
+    type: cropper
+    ratios:
+      - 16/9
+      - 4/3
+      - 
+        label: portrait image
+        value: 2/3
 ```
