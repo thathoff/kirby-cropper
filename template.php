@@ -24,11 +24,18 @@
     <?php if(count($field->ratios())): ?>
         <?php
         foreach($field->ratios() as $ratio):
+            if (is_array($ratio)) {
+                $label = $ratio[ 'label' ];
+                $ratio = $ratio[ 'value' ];
+            } else {
+                $label = $ratio;
+            }
             $ratioExploded = explode('/', $ratio);
             ?>
-            <button class="btn btn-rounded cropperChangeAspectRatio" data-aspectratio="<?php echo ((int)$ratioExploded[0] / (int)$ratioExploded[1]) ?>"><?php echo html($ratio) ?></button>
+            <button class="btn btn-rounded cropperChangeAspectRatio" data-aspectratio="<?php echo ((int)$ratioExploded[0] / (int)$ratioExploded[1]) ?>"><?php echo html($label) ?></button>
         <?php endforeach ?>
     <?php endif ?>
+
     <button class="btn btn-rounded cropperChangeAspectRatio" data-aspectratio="NaN">Free</button>
 
     <button class="btn btn-rounded btn-positive" id="cropperSaveButton">Crop it now!</button>
@@ -43,6 +50,12 @@
         $image.cropper( {
             aspectRatio: <?php
             $firstRadio = $field->ratios();
+            $firstRadio = $firstRadio[0];
+
+            if(is_array($firstRadio)) {
+                $firstRadio = $firstRadio[ 'value' ];
+            }
+
             $firstRadio = $firstRadio[0];
 
             echo $firstRadio ? $firstRadio : 'NaN'
