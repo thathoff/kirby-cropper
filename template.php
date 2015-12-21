@@ -17,30 +17,54 @@
 </div>
 
 <div class="croppingArea" style="display: none">
-    <div>
-        <img id="image" class="img-responsive" src="" alt="Picture">
+    <div class="input input-with-items">
+        <div class="item item-condensed">
+            <div class="item-content">
+                <div class="item-info">
+                    <img id="image" class="img-responsive" src="" alt="Picture">
+                </div>
+            </div>
+            <nav class="item-options" style="position: static">
+
+                <ul class="nav nav-bar">
+                    <?php if(count($field->ratios())): ?>
+                        <?php
+                        foreach($field->ratios() as $ratio):
+                            if (is_array($ratio)) {
+                                $label = $ratio[ 'label' ];
+                                $ratio = $ratio[ 'value' ];
+                            } else {
+                                $label = $ratio;
+                            }
+                            $ratioExploded = explode('/', $ratio);
+                            ?>
+                            <li>
+                                <a
+                                    class="btn cropperChangeAspectRatio"
+                                    data-aspectratio="<?php
+                                    echo((int)$ratioExploded[ 0 ] / (int)$ratioExploded[ 1 ])
+                                    ?>"><?php echo html($label) ?></a>
+                            </li>
+                        <?php endforeach ?>
+                    <?php endif ?>
+
+                    <?php if($field->disallowfree() != true): ?>
+                        <li>
+                            <a
+                                class="btn cropperChangeAspectRatio"
+                                data-aspectratio="NaN">free aspect ratio</a>
+                        </li>
+                    <?php endif ?>
+                </ul>
+
+            </nav>
+        </div>
+
+        <a
+            style="margin-top: 8px"
+            class="btn btn-rounded btn-positive"
+            id="cropperSaveButton">Crop It Now!</a>
     </div>
-
-    <?php if(count($field->ratios())): ?>
-        <?php
-        foreach($field->ratios() as $ratio):
-            if (is_array($ratio)) {
-                $label = $ratio[ 'label' ];
-                $ratio = $ratio[ 'value' ];
-            } else {
-                $label = $ratio;
-            }
-            $ratioExploded = explode('/', $ratio);
-            ?>
-            <button class="btn btn-rounded cropperChangeAspectRatio" data-aspectratio="<?php echo ((int)$ratioExploded[0] / (int)$ratioExploded[1]) ?>"><?php echo html($label) ?></button>
-        <?php endforeach ?>
-    <?php endif ?>
-
-    <?php if($field->disallowfree() != true): ?>
-        <button class="btn btn-rounded cropperChangeAspectRatio" data-aspectratio="NaN">free aspect ratio</button>
-    <?php endif ?>
-
-    <button class="btn btn-rounded btn-positive" id="cropperSaveButton">Crop It Now!</button>
 </div>
 
 <script>
