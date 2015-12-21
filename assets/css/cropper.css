@@ -1,0 +1,29 @@
+.croppingarea {
+    background: #fff;
+    border: 2px solid #ddd;
+    border-top: none;
+}
+
+.croppingarea .btn {
+    color: #777;
+    padding: .75em 1.5em;
+    border-right: 1px solid #efefef;
+}
+
+.croppingarea .btn:focus,
+.croppingarea .btn:hover {
+    color: #000;
+}
+
+.croppingarea .btn-positive {
+    color: #8dae28;
+}
+
+.croppingarea .btn-positive:focus,
+.croppingarea .btn-positive:hover {
+    color: #000;
+}
+
+.croppingarea .croppingarea--imagewrapper {
+    padding: 8px;
+}

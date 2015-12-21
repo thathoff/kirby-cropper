@@ -27,6 +27,7 @@ class cropperField extends BaseField
      */
     public static $assets = array(
         'css' => array(
+            'cropper.css',
             '../../cropper/dist/cropper.min.css',
         ),
         'js' => array(
