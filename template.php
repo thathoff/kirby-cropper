@@ -36,9 +36,11 @@
         <?php endforeach ?>
     <?php endif ?>
 
-    <button class="btn btn-rounded cropperChangeAspectRatio" data-aspectratio="NaN">Free</button>
+    <?php if($field->disallowfree() != true): ?>
+        <button class="btn btn-rounded cropperChangeAspectRatio" data-aspectratio="NaN">free aspect ratio</button>
+    <?php endif ?>
 
-    <button class="btn btn-rounded btn-positive" id="cropperSaveButton">Crop it now!</button>
+    <button class="btn btn-rounded btn-positive" id="cropperSaveButton">Crop It Now!</button>
 </div>
 
 <script>
