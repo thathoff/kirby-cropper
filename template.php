@@ -16,8 +16,8 @@
     </div>
 </div>
 
-<div class="croppingArea" style="display: none">
-    <div>
+<div class="croppingarea" style="display: none">
+    <div class="croppingarea--imagewrapper">
         <img id="image" class="img-responsive" src="" alt="Picture">
     </div>
 
@@ -32,22 +32,22 @@
             }
             $ratioExploded = explode('/', $ratio);
             ?>
-            <button class="btn btn-rounded cropperChangeAspectRatio" data-aspectratio="<?php echo ((int)$ratioExploded[0] / (int)$ratioExploded[1]) ?>"><?php echo html($label) ?></button>
+            <button class="btn cropperChangeAspectRatio" data-aspectratio="<?php echo ((int)$ratioExploded[0] / (int)$ratioExploded[1]) ?>"><?php echo html($label) ?></button>
         <?php endforeach ?>
     <?php endif ?>
 
     <?php if($field->disallowfree() != true): ?>
-        <button class="btn btn-rounded cropperChangeAspectRatio" data-aspectratio="NaN">free aspect ratio</button>
+        <button class="btn cropperChangeAspectRatio" data-aspectratio="NaN">free aspect ratio</button>
     <?php endif ?>
 
-    <button class="btn btn-rounded btn-positive" id="cropperSaveButton">Crop It Now!</button>
+    <button class="btn btn-positive" id="cropperSaveButton">Crop It Now!</button>
 </div>
 
 <script>
     $( function () {
         var $previews = $( '.preview' ),
             $image = $( '#image' ),
-            $croppingArea = $( '.croppingArea' );
+            $croppingArea = $( '.croppingarea' );
 
         $image.cropper( {
             aspectRatio: <?php
