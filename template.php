@@ -51,16 +51,16 @@
 
         $image.cropper( {
             aspectRatio: <?php
-            $firstRadio = $field->ratios();
-            $firstRadio = $firstRadio[0];
+            $firstRatio = $field->ratios();
+            $firstRatio = $firstRatio[0];
 
-            if(is_array($firstRadio)) {
-                $firstRadio = $firstRadio[ 'value' ];
+            if(is_array($firstRatio)) {
+                $firstRatio = $firstRatio[ 'value' ];
             }
 
-            $firstRadio = $firstRadio[0];
+            $firstRatio = explode('/', $firstRatio);
 
-            echo $firstRadio ? $firstRadio : 'NaN'
+            echo is_array($firstRatio) ? ($firstRatio[0] / $firstRatio[1]) : 'NaN'
             ?>,
             zoomable: false,
             build: function ( e ) {
