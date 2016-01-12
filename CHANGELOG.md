@@ -1,3 +1,13 @@
+<a name="0.0.4"></a>
+## [0.0.4](https://github.com/blankogmbh/kirby-cropper/compare/v0.0.3...v0.0.4) (2016-01-12)
+
+
+### Bug Fixes
+
+* always show newest image in cropper ([ba27d5b](https://github.com/blankogmbh/kirby-cropper/commit/ba27d5b))
+
+
+
 <a name="0.0.3"></a>
 ## [0.0.3](https://github.com/blankogmbh/kirby-cropper/compare/v0.0.2...v0.0.3) (2015-12-22)
 
