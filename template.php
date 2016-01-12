@@ -91,7 +91,7 @@
                 obj = JSON.parse( $( this ).val() );
 
                 $croppingArea.show();
-                $image.cropper( 'replace', obj.url );
+                $image.cropper( 'replace', obj.url + '?' + $.now() );
             } else {
                 $croppingArea.hide();
             }
