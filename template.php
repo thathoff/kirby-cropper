@@ -1,19 +1,22 @@
-<div class="input input-with-selectbox">
-    <div class="selectbox-wrapper">
-        <select class="selectbox" name="cropper" id="cropperSelect">
-            <option></option>
-            <?php foreach ($field->files() as $file): ?>
-                <option
-                    value='{
-                        "filename": "<?php echo $file->filename() ?>",
-                        "url": "<?php echo $file->url() ?>",
-                        "root": "<?php echo $file->root() ?>"
-                    }'>
-                    <?php echo $file->filename() ?>
-                </option>
-            <?php endforeach ?>
-        </select>
+<div class="field-content">
+    <div class="input input-with-selectbox ui-droppable">
+        <div class="selectbox-wrapper">
+            <select class="selectbox" name="cropper" id="cropperSelect">
+                <option></option>
+                <?php foreach ($field->files() as $file): ?>
+                    <option
+                        value='{
+                            "filename": "<?php echo $file->filename() ?>",
+                            "url": "<?php echo $file->url() ?>",
+                            "root": "<?php echo $file->root() ?>"
+                        }'>
+                        <?php echo $file->filename() ?>
+                    </option>
+                <?php endforeach ?>
+            </select>
+        </div>
     </div>
+    <div class="field-icon"><i class="icon fa fa-image"></i></div>
 </div>
 
 <div class="croppingarea" style="display: none">
