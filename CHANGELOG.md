@@ -1,3 +1,13 @@
+<a name="1.0.0"></a>
+## [1.0.0](https://github.com/blankogmbh/kirby-cropper/compare/v0.0.4...v1.0.0) (2016-12-15)
+
+
+### Features
+
+* improve look of panel field ([e28389d](https://github.com/blankogmbh/kirby-cropper/commit/e28389d))
+
+
+
 <a name="0.0.4"></a>
 ## [0.0.4](https://github.com/blankogmbh/kirby-cropper/compare/v0.0.3...v0.0.4) (2016-01-12)
 
